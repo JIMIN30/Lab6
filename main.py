@@ -9,10 +9,14 @@ def encode(original_password):  # It encodes the input password
     encoded_password = ''
     for digit in original_password:
         encoded_password += str((int(digit) + 3) % 10)
-
-
     return encoded_password
     print("Your password has been encoded and stored!")
+def decode(data): # Decodes the input password
+    decode_data = ''
+    for char in str(data):
+        decode_data += str((int(char) - 3) % 10)
+    return decode_data
+
 
 print_menu()
 user_selection = input("Please enter an option: ")
