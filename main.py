@@ -21,20 +21,20 @@ def decode(data):  # Decodes the input password
 
 
 user_selection = 0
+if __name__ == '__main__':
+    while user_selection != '3':    # Executes based on user selection
 
-while user_selection != '3':
+        print_menu()
+        user_selection = input("Please enter an option: ")
 
-    print_menu()
-    user_selection = input("Please enter an option: ")
+        if user_selection == '1':
+            original_password = input("Please enter your password to encode: ")
+            encoded_password = encode(original_password)
+            print("Your password has been encoded and stored!\n")
 
-    if user_selection == '1':
-        original_password = input("Please enter your password to encode: ")
-        encoded_password = encode(original_password)
-        print("Your password has been encoded and stored!\n")
+        if user_selection == '2':
+            decoded_password = decode(encoded_password)
+            print(f"The encoded password is {encoded_password}, and the original password is {decoded_password}.\n")
 
-    if user_selection == '2':
-        decoded_password = decode(encoded_password)
-        print(f"The encoded password is {encoded_password}, and the original password is {decoded_password}.\n")
-
-    if user_selection == '3':
-        break
+        if user_selection == '3':
+            break
